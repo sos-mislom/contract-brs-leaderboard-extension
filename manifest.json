@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Contract BRS Leaderboard",
+  "version": "1.0.0",
+  "description": "Shows team BRS scores on contract.tochka-urfu.tech leaderboard pages.",
+  "permissions": ["storage", "scripting", "tabs"],
+  "host_permissions": ["https://contract.tochka-urfu.tech/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://contract.tochka-urfu.tech/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
